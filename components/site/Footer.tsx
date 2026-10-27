@@ -82,6 +82,18 @@ export default function Footer() {
             {artist.city}, {artist.country}
           </span>
           <span>{artist.coordinates}</span>
+          <span>
+            Created by{" "}
+            <a
+              className="footer__credit"
+              href="https://www.instagram.com/yovsses"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @yovsses
+              <ArrowUpRight size={11} />
+            </a>
+          </span>
           <span className="footer__end">
             <i className="dot" aria-hidden="true" />
             Signal ends / 06

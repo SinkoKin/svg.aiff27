@@ -45,6 +45,7 @@ export default function Contact() {
   const [fields, setFields] = useState<Fields>(emptyFields);
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "draft">("idle");
+  const [draftHref, setDraftHref] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const { scrollTo } = useSmoothScroll();
@@ -54,7 +55,10 @@ export default function Contact() {
     if (errors[key]) {
       setErrors((current) => ({ ...current, [key]: undefined }));
     }
-    if (status === "draft") setStatus("idle");
+    if (status === "draft") {
+      setStatus("idle");
+      setDraftHref(null);
+    }
   };
 
   const validate = () => {
@@ -76,6 +80,8 @@ export default function Contact() {
     setErrors(next);
     const keys = Object.keys(next) as Array<keyof Fields>;
     if (keys.length) {
+      setStatus("idle");
+      setDraftHref(null);
       const target = formRef.current?.querySelector<HTMLElement>(
         `[name="${keys[0]}"]`,
       );
@@ -93,9 +99,11 @@ export default function Contact() {
       fields.message,
     ].join("\n");
 
-    window.location.href = `mailto:${artist.email}?subject=${encodeURIComponent(
+    const mailto = `mailto:${artist.email}?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(body)}`;
+    setDraftHref(mailto);
+    window.location.href = mailto;
     setStatus("draft");
   };
 
@@ -277,11 +285,11 @@ export default function Contact() {
               </p>
             </div>
 
-            {status === "draft" ? (
+            {status === "draft" && draftHref ? (
               <p className="booking__status" role="status">
                 Your email app should open with the details ready. If it
                 doesn&apos;t, write to{" "}
-                <a href={`mailto:${artist.email}`}>{artist.email}</a>.
+                <a href={draftHref}>{artist.email}</a>.
               </p>
             ) : null}
           </form>

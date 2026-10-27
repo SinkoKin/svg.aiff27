@@ -2427,113 +2427,57 @@ img {
   color: var(--ash);
 }
 
-.live__cta {
-  margin-top: 2rem;
-}
-
-.live__list-wrap {
-  align-self: end;
+.live__event-wrap {
+  display: grid;
+  align-content: center;
   padding-top: clamp(20px, 5vw, 60px);
 }
 
-.live__list-head {
-  display: grid;
-  grid-template-columns: 34px 1.5fr 1fr 0.6fr 34px;
-  gap: 0.9rem;
-  padding-bottom: 0.6rem;
-  border-bottom: 1px solid var(--line);
-  font-size: 8px;
-}
-
-.live__row {
-  position: relative;
-  display: grid;
-  grid-template-columns: 34px 1.5fr 1fr 0.6fr 34px;
-  gap: 0.9rem;
-  align-items: center;
-  padding: 1.1rem 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.live__row-index {
-  font-size: 8px;
-  color: var(--ash);
-}
-
-.live__row-name {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-stretch: 112%;
-  font-size: clamp(1.4rem, 2.2vw, 2rem);
-  line-height: 1;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  color: var(--bone);
-  transition: color 0.3s ease, transform 0.4s var(--ease);
-}
-
-.live__row:hover .live__row-name {
-  color: var(--lime);
-  transform: translateX(5px);
-}
-
-.live__row-place,
-.live__row-tag {
-  font-size: 8px;
-}
-
-.live__row-tag {
-  color: rgba(146, 141, 130, 0.7);
-}
-
-.live__row-link {
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
+.live__event {
+  padding: clamp(1.5rem, 4vw, 3rem);
   border: 1px solid var(--line);
-  color: var(--ash);
-  opacity: 0.7;
-  transition: color 0.25s ease, border-color 0.25s ease, opacity 0.25s ease;
+  background: rgba(0, 0, 0, 0.2);
 }
 
-.live__row:hover .live__row-link {
-  color: var(--lime);
-  border-color: var(--lime);
-  opacity: 1;
-}
-
-.live__note {
-  margin-top: 1rem;
+.live__event-label {
   font-size: 8px;
+  color: var(--lime);
 }
 
-.live__preview {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 60;
-  width: 210px;
-  padding: 6px;
-  border: 1px solid var(--lime);
-  background: var(--ink);
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transform-origin: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+.live__event-name {
+  margin-top: 1.4rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  font-weight: 700;
+  line-height: 0.98;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  color: var(--bone);
 }
 
-.live__preview-img {
-  width: 100%;
-  height: auto;
-  filter: saturate(0.75) contrast(1.05);
+.live__event-note {
+  margin-top: 1rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ash);
 }
 
-.live__preview-tag {
-  display: block;
-  padding-top: 5px;
-  font-size: 7px;
+.live__event-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--lime);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bone);
+  transition: color 0.25s ease;
+}
+
+.live__event-link:hover {
   color: var(--lime);
 }
 
@@ -2993,6 +2937,22 @@ a.booking__detail-main:hover {
   font-size: 8px;
 }
 
+.footer__credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--bone);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+  transition: color 0.25s ease;
+}
+
+.footer__credit:hover {
+  color: var(--lime);
+}
+
 .footer__end {
   display: inline-flex;
   align-items: center;
@@ -3073,7 +3033,7 @@ a.booking__detail-main:hover {
     position: static;
   }
 
-  .live__list-wrap {
+  .live__event-wrap {
     padding-top: 0;
   }
 
@@ -3402,38 +3362,6 @@ a.booking__detail-main:hover {
 
   .live__title {
     font-size: clamp(2.9rem, 12vw, 5rem);
-  }
-
-  .live__list-head {
-    grid-template-columns: 24px 1.4fr 1fr 30px;
-    gap: 0.6rem;
-  }
-
-  .live__list-head span:nth-child(3) {
-    display: none;
-  }
-
-  .live__row {
-    grid-template-columns: 24px 1.4fr 1fr 30px;
-    gap: 0.6rem;
-    padding: 0.95rem 0;
-  }
-
-  .live__row-tag {
-    display: none;
-  }
-
-  .live__row-name {
-    font-size: 1.35rem;
-  }
-
-  .live__row-link {
-    width: 30px;
-    height: 30px;
-  }
-
-  .live__preview {
-    display: none;
   }
 
   .booking__head {

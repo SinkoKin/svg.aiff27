@@ -169,7 +169,7 @@ export default function Archive() {
           </h2>
           <p className="archive__intro" data-reveal>
             Booth studies, dancefloor heat, and the occasional still frame.
-            Eight nights from the archive.
+            Five frames from the archive.
           </p>
         </div>
 

@@ -17,14 +17,6 @@ export type GalleryItem = {
   meta: string;
 };
 
-export type Transmission = {
-  name: string;
-  place: string;
-  tag: string;
-  image: string;
-  alt: string;
-};
-
 export const artist = {
   name: "DJ SVG",
   realName: "Ilyas Naim",
@@ -61,7 +53,7 @@ export const navItems = [
   { id: "sound", label: "Sound", index: "02" },
   { id: "signal", label: "Signal", index: "03" },
   { id: "archive", label: "Archive", index: "04" },
-  { id: "live", label: "Live", index: "05" },
+  { id: "live", label: "Upcoming", index: "05" },
   { id: "booking", label: "Booking", index: "06" },
 ];
 
@@ -97,24 +89,6 @@ export const gallery: GalleryItem[] = [
     meta: "Archive / 001",
   },
   {
-    id: "02",
-    src: "/media/gallery-02.webp",
-    width: 1800,
-    height: 2400,
-    alt: "DJ SVG in profile behind a Pioneer CDJ setup, braided hair and a beaded necklace.",
-    caption: "Booth study",
-    meta: "Archive / 002",
-  },
-  {
-    id: "03",
-    src: "/media/gallery-03.webp",
-    width: 1800,
-    height: 2400,
-    alt: "Close view of DJ SVG adjusting headphones beside another person at the decks.",
-    caption: "Headroom",
-    meta: "Archive / 003",
-  },
-  {
     id: "04",
     src: "/media/gallery-04.webp",
     width: 1067,
@@ -147,40 +121,7 @@ export const gallery: GalleryItem[] = [
     width: 1080,
     height: 1350,
     alt: "DJ SVG in a patterned bandana and white shirt behind the decks at an outdoor event.",
-    caption: "Lkhayal",
+    caption: "Grey Room",
     meta: "Archive / 007",
-  },
-  {
-    id: "08",
-    src: "/media/gallery-08.webp",
-    width: 1080,
-    height: 1350,
-    alt: "DJ SVG in a leather jacket and sunglasses among a crowd at a night event.",
-    caption: "Sobbyss",
-    meta: "Archive / 008",
-  },
-];
-
-export const transmissions: Transmission[] = [
-  {
-    name: "Momento",
-    place: "Marrakech, MA",
-    tag: "Archive",
-    image: "/media/gallery-06.webp",
-    alt: "CDJ decks at Momento, Marrakech.",
-  },
-  {
-    name: "Lkhayal",
-    place: "Marrakech, MA",
-    tag: "Archive",
-    image: "/media/gallery-07.webp",
-    alt: "DJ SVG performing at Lkhayal, Marrakech.",
-  },
-  {
-    name: "Sobbyss",
-    place: "Marrakech, MA",
-    tag: "Archive",
-    image: "/media/gallery-08.webp",
-    alt: "Crowd and DJ SVG at Sobbyss, Marrakech.",
   },
 ];
